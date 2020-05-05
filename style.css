@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/************************************* Animation *****************************/
+
+/* Pour cacher le texte qui est déjà présent sur la page ?*/
+#animationLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 98;
+}
+
+#animationContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background:#1f1f1f;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    display: none;
+    z-index: 99;
+}
+
+#animation {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.animationIn {
+  display: flex !important;
+  animation-duration: 2s;
+  animation-name: slideIn;
+  animation-timing-function: ease-out;
+  left: 0px !important;
+  width: 100vw;
+}
+
+.animationOut {
+  display: flex !important;
+  animation-duration: 2s;
+  animation-name: slideOut;
+  animation-timing-function: ease-out;
+  left: auto !important;
+  right: 0;
+  width: 0;
+}
+
+.animationOpacityIn {
+  animation-duration: 1s;
+  animation-name: opacityIn;
+  animation-timing-function: linear;
+  opacity: 1;
+}
+
+.animationOpacityOut {
+  animation-duration: 1s;
+  animation-name: opacityOut;
+  animation-timing-function: linear;
+  opacity: 0;
+}
+
+
+/* Animation d'arrivé */
+@keyframes slideIn {
+    from {
+      width: 0; 
+    }
+  
+    to {
+      width: 100vw;
+    }
+}
+
+/* Animation de départ */
+@keyframes slideOut {
+  from {
+    width: 100vw; 
+  }
+
+  to {
+    width: 0;
+  }
+}
+
+/* Animation opacité */
+@keyframes opacityIn {
+  0% {
+    opacity: 0;
+  }
+
+  50%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+/* Animation opacité */
+@keyframes opacityOut {
+  0% {
+    opacity: 1;
+  }
+
+  50%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+  }
+}
+
+/************** Fin animation ****************************/
+
+/*********************** Barre de chargement ***************************/
+
+
+#progressBar {
+  margin-top: 10px;
+  width: 200px;
+	height: 3px;  /* Can be anything */
+	position: relative;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 1px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+
+#progressBar > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: grey;
+  box-shadow: 
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  animation-duration: 2s;
+  animation-name: charging;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* animation-direction: alternate; */
+}
+
+@keyframes charging {
+  0% {
+    width: 0%;
+  }
+
+  100%{
+    width: 100%;
+  }
+}
+
+
+/******************* Fin barre de chargement *****************************/

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Animation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Animation -->
+    <div id="animationLayer"></div>
+    <div id="animationContainer">
+        <div id="animation">
+            <p style="font-size: 40px;">Logo</p>
+            <div id="progressBar">
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- Fin animation -->
+
+
+<!-- Contenu factice -->
+    <div id="Inner">
+        <h1>Lorem Ipsum</h1>
+        <h4>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h4>
+        <h5>"Il a personne qui  la souffrance pour elle-même, qui ne la recherche et qui ne la veuille pour
+            elle-même..."</h5>
+        <hr>
+
+        <div id="Content">
+            <div class="boxed">
+                <div id="lipsum">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget ante nec velit egestas
+                        molestie id sit amet nisl. Suspendisse vel lacus in massa commodo lobortis quis id purus.
+                        Pellentesque pulvinar pharetra venenatis. Integer dignissim pretium est, in venenatis turpis
+                        feugiat lobortis. Cras ac enim placerat, rutrum leo et, volutpat nibh. Nam at molestie tellus,
+                        rhoncus congue leo. Donec hendrerit eget neque at sagittis. Interdum et malesuada fames ac ante
+                        ipsum primis in faucibus. Quisque accumsan maximus justo at consectetur. Morbi ut eros pharetra,
+                        consectetur felis ac, congue est. Vivamus leo nunc, dictum id pretium a, pharetra vestibulum
+                        metus. Curabitur lobortis, enim id viverra sollicitudin, lacus lorem aliquam ante, ut tincidunt
+                        nisi augue a nunc.
+                    </p>
+                    <p>
+                        Suspendisse id erat sed tortor pretium varius eget at felis. Donec ac dui pharetra, iaculis
+                        augue quis, imperdiet eros. Vivamus turpis odio, ultrices in magna sit amet, pellentesque
+                        tincidunt risus. In iaculis nisl lacus, quis aliquet lorem egestas eget. Suspendisse potenti.
+                        Sed sagittis ultrices aliquet. Vestibulum quis pharetra orci, in fringilla odio. Sed vulputate,
+                        augue ac tristique tristique, risus erat ultrices tortor, ac euismod urna lorem sit amet turpis.
+                        Nulla nec pretium ante. Etiam porttitor condimentum nibh in sodales. Cras accumsan tortor vel
+                        orci sodales porttitor. Nam vulputate mollis arcu sed aliquet. Sed sed arcu a nunc condimentum
+                        molestie sit amet a nisi.
+                    </p>
+                    <p>
+                        Donec purus lacus, hendrerit nec purus id, tempus suscipit sem. Phasellus ipsum odio, dictum vel
+                        neque eu, varius vulputate ligula. Vestibulum viverra a odio eu facilisis. Donec odio magna,
+                        euismod id lacus vel, placerat placerat nibh. Mauris eu placerat nulla. Nullam non ante at urna
+                        dignissim luctus sit amet et dui. Cras id molestie felis. Morbi vel urna dictum, maximus lorem
+                        ac, consectetur ligula. Etiam congue turpis vel augue venenatis porta. Integer aliquet faucibus
+                        dolor, ut tincidunt ante lacinia id. Nunc et nisi in felis elementum laoreet quis ac tortor. Sed
+                        volutpat massa sed orci maximus pellentesque.
+                    </p>
+                    <p>
+                        Fusce sit amet dui vitae quam vulputate placerat quis sit amet orci. Pellentesque a neque
+                        dapibus, pellentesque massa id, iaculis dolor. Nulla vel mi dapibus, iaculis nisi eget, ultrices
+                        quam. Cras molestie, arcu eget pulvinar euismod, neque nunc congue massa, et hendrerit nisl
+                        felis sit amet justo. Suspendisse pulvinar dui eget eros pretium ornare. Curabitur non dolor
+                        aliquet, ultrices odio eget, mollis enim. Integer ullamcorper odio ac leo cursus, non eleifend
+                        lectus semper.
+                    </p>
+                    <p>
+                        Nam fermentum felis et orci porttitor, ut elementum risus finibus. Mauris neque nulla, faucibus
+                        sit amet semper quis, placerat sed ligula. Maecenas vitae malesuada metus. Aenean interdum,
+                        felis eu euismod cursus, nisi urna consequat massa, a accumsan urna nibh non sapien. Maecenas
+                        euismod velit sed lorem suscipit tempor. Sed consequat augue facilisis, lobortis leo nec,
+                        convallis sapien. Praesent ut diam feugiat, scelerisque magna vel, ullamcorper urna. Ut non
+                        rutrum ligula, in ornare diam.
+                    </p>
+                </div>
+                <div id="generated">5 paragraphes, 461 mots, 3045 caractères de <a href="https://fr.lipsum.com/"
+                        title="Lorem Ipsum">Lorem Ipsum</a> généré</div>
+            </div>
+        </div>
+        <hr>
+
+    </div>
+
+
+    <!-- Script de l'animation -->
+    <script>
+
+// Code pour l'animation
+        const container = document.getElementById("animationContainer");
+        const animation = document.getElementById("animation");
+        const animationLayer = document.getElementById("animationLayer");
+
+        // Lignes à ajouter pour déclencher l'animation
+        animationLayer.style.display = "block";
+        container.classList.add("animationIn");
+        animation.classList.add("animationOpacityIn");
+
+        // A la place du setTimeout mettre l'événement quand la page est chargée ?
+        setTimeout(function(){
+
+            // Lignes à ajouter pour enlever l'animation
+            animationLayer.style.display = "none";
+            console.log("Classlist ! : ",container.classList);
+            container.className = "animationOut";
+            animation.className = "animationOpacityOut";
+
+            //container.classList.replace("animationIn", "animationOut");
+            // animation.classList.replace("animationOpacityIn", "animationOpacityOut");
+
+            setTimeout(function(){
+                console.log("deuxieme console !");
+                container.classList.remove("animationOut");
+            }, 2000);
+
+
+        }, 5000);
+
+    </script>
+
+</body>
+
+</html>
